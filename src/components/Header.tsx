@@ -1,4 +1,5 @@
 import ThemeToggle from "./ThemeToggle";
+import LanguageSwitcher from "./LanguageSwitcher";
 import Image from "next/image";
 
 export default function Header() {
@@ -16,7 +17,10 @@ export default function Header() {
         <a href="#technology" className="hover:text-[var(--color-primary)] transition">Technology</a>
         <a href="#news" className="hover:text-[var(--color-primary)] transition">News</a>
       </nav>
-      <ThemeToggle />
+      <div className="flex items-center gap-4">
+        <LanguageSwitcher />
+        <ThemeToggle />
+      </div>
     </header>
   );
 }

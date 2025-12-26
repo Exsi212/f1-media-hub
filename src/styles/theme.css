@@ -9,7 +9,7 @@
   --color-glass: rgba(44, 44, 44, 0.6);
   --color-card: #18181b;
   --color-shadow: 0 4px 32px 0 rgba(184, 0, 28, 0.25);
-  --color-glow: 0 0 16px 2px #b8001c;
+  --color-glow: 0 0 8px 1px #b8001c;
   --color-gray: #888;
   --color-white: #fff;
   --color-graphite: #232323;
@@ -27,7 +27,7 @@
   --color-glass: rgba(255,255,255,0.85);
   --color-card: #fff;
   --color-shadow: 0 4px 32px 0 rgba(184, 0, 28, 0.08);
-  --color-glow: 0 0 16px 2px #e53935;
+  --color-glow: 0 0 8px 1px #e53935;
   --color-gray: #6c757d;
   --color-white: #fff;
   --color-graphite: #e0e0e0;
