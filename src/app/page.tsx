@@ -1,65 +1,57 @@
-import Image from "next/image";
+import React from "react";
+import CarCard from "../components/CarCard";
+
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen w-full bg-[var(--color-bg)] text-[var(--color-fg)] font-sans flex flex-col items-center justify-start">
+      {/* Hero Section */}
+      <section className="relative w-full flex flex-col items-center justify-center min-h-[70vh] py-24 px-4 overflow-hidden bg-gradient-to-br from-[var(--color-bg)] via-[var(--color-card)] to-[var(--color-cherry)]">
+        {/* Glow/Glassmorphism background */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--color-primary)] opacity-20 blur-3xl rounded-full" />
+          <div className="absolute right-0 bottom-0 w-[300px] h-[300px] bg-[var(--color-accent)] opacity-10 blur-2xl rounded-full" />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="relative z-10 flex flex-col items-center text-center">
+          <h1 className="text-6xl md:text-8xl font-extrabold tracking-tight text-[var(--color-primary)] drop-shadow-[var(--color-glow)] mb-6 uppercase">Formula 1 Media Hub</h1>
+          <p className="text-2xl md:text-3xl text-[var(--color-gray)] font-medium mb-8 max-w-2xl">Speed, engineering, and data — the ultimate motorsport editorial experience. Dive into the world of Formula 1 with immersive visuals, stats, and technology.</p>
+          <a href="#cars" className="inline-block mt-4 px-8 py-4 rounded-full bg-[var(--color-primary)] text-[var(--color-white)] font-bold text-xl shadow-[var(--color-glow)] hover:bg-[var(--color-accent)] transition-all duration-300">Explore Cars</a>
         </div>
-      </main>
-    </div>
+      </section>
+      {/* Featured Cars Section */}
+      <section id="cars" className="w-full max-w-5xl mt-16 mb-12">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--color-primary)] mb-6 uppercase tracking-wide">Featured Cars</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Example car cards, replace with dynamic data as needed */}
+          <CarCard
+            name="Mercedes W14"
+            season="2023"
+            engine="Mercedes-AMG F1 M14 E Performance"
+            power="1050 hp"
+            weight="798 kg"
+            topSpeed="360 km/h"
+            image="/car-mercedes-w14.png"
+          />
+          <CarCard
+            name="Red Bull RB19"
+            season="2023"
+            engine="Honda RBPT"
+            power="1050 hp"
+            weight="798 kg"
+            topSpeed="355 km/h"
+            image="/car-redbull-rb19.png"
+          />
+          <CarCard
+            name="Ferrari SF-23"
+            season="2023"
+            engine="Ferrari 066/7"
+            power="1040 hp"
+            weight="798 kg"
+            topSpeed="350 km/h"
+            image="/car-ferrari-sf23.png"
+          />
+        </div>
+      </section>
+    </main>
   );
 }
